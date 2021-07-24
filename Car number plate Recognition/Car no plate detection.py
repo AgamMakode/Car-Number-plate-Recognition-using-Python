@@ -3,7 +3,7 @@ import cv2
 #############################################
 frameWidth = 640
 frameHeight = 480
-nPlateCascade = cv2.CascadeClassifier("E:/Local Disk E/VS code/Learn-OpenCV-in-3-hours-master/Resources/haarcascade_russian_plate_number.xml")
+nPlateCascade = cv2.CascadeClassifier("E:/Local Disk E/VS code/OpenCV/Resources/haarcascade_russian_plate_number.xml")
 minArea = 200
 color = (255,0,255)
 ###############################################
@@ -29,7 +29,7 @@ while True:
     cv2.imshow("Result", img)
 
     if cv2.waitKey(1) & 0xFF == ord('s'):
-        cv2.imwrite(" E:/Local Disk E/VS code/Learn-OpenCV-in-3-hours-master/Resources/Scanned/ NoPlate_" +str(count)+ ".jpg",imgRoi)
+        cv2.imwrite(" E:/Local Disk E/VS code/OpenCV/Resources/Scanned/ NoPlate_" +str(count)+ ".jpg",imgRoi)
         cv2.rectangle(img,(0,200),(640,300),(0,255,0),cv2.FILLED)
         cv2.putText(img,"Scan Saved",(150,265),cv2.FONT_HERSHEY_DUPLEX,
                     2,(0,0,255),2)
